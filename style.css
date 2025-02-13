@@ -1,0 +1,576 @@
+@font-face {
+    font-family: Futura;
+    src: url(./Futura-Bold.ttf);
+}
+@font-face {
+    font-family: Gilroy;
+    src: url(./Gilroy-Medium.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+
+*::selection {
+    color: #fff;
+    background-color: #000;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main {
+    flex: 1;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-content {
+    display: flex;
+    gap: 5rem; /* Adjust spacing between elements */
+    align-items: center;
+}
+
+.navbar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    color: #97572b;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    color: #97572b;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue color for hover effect */
+}
+
+
+#cursor {
+    height: 180px;
+    width: 180px;
+    background-color: rgba(219, 138, 51, 0.7);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+
+}
+
+#page1 {
+    min-height: 100vh;
+    /* background-color: aqua; */
+    position: relative;
+    width: 100%;
+    padding: 0 1vw;
+    padding-top: 20vh;
+
+}
+
+#page1 h1 {
+    font-size: 4.8vw;
+    color: #97572b;
+    text-transform: uppercase;
+    font-family: futura;
+    line-height: 10vw;
+    letter-spacing: -8px;
+}
+
+#video-container {
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
+    margin-top: 1vw;
+    position: relative;
+}
+
+#video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#video-container #play {
+    padding: 3vw 2.2vw;
+    background-color: black;
+    color: #fff;
+    font-size: 1.3vw;
+    position: fixed;
+    text-transform: uppercase;
+    font-family: futura;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 3vw 1vw;
+    justify-content: space-between;
+}
+
+#page2 .elem {
+    height: 100%;
+    width: 31%;
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+#page2 .elem .dets {
+    height: 40%;
+    border-radius: 50px;
+    width: 70%;
+    position: absolute;
+    z-index: 9;
+    /* background-color: rgb(229, 156, 186); */
+
+
+}
+#page2 .elem .dets p{
+   font-size: x-large;
+   text-align: center;
+   color: #fff;
+   font-weight: bolder;
+
+
+}
+
+#page2 .elem .dets p .p1{
+    font-size: x-large;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+ 
+ 
+ }
+
+ #page2 .elem .dets p{
+   
+   text-align: center;
+   color: #fff;
+   font-weight: bolder;
+
+
+}
+
+#page3 {
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#page3 h1 {
+    font-size: x-large;
+    color: #97572b;
+    text-align: center; /* Center the text horizontally */
+    position: absolute; /* Position it relative to the parent container */
+    top: 0px; /* Set it near the top */
+    left: 50%; /* Move to the center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    margin: 0; /* Remove default margins */
+    padding: 0;
+}
+#page4 h1{
+    font-size: x-large;
+    color: #97572b;
+    text-align: center; /* Center the text horizontally */
+    position: absolute; /* Position it relative to the parent container */
+    top: 0px; /* Set it near the top */
+    left: 50%; /* Move to the center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    margin: 0; /* Remove default margins */
+    padding: 0;
+}
+
+#slider-section {
+    background-color: #F7F7F7; /* Smoke white background color */
+    padding: 2rem 0;
+    
+}
+
+#slider-section h1.our {
+    text-align: center;
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #97572b;
+    margin-bottom: 1rem;
+}
+
+.sliders-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.left-slider, .right-slider {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.right-slider {
+    transform: scaleX(-1); /* Flip the right slider horizontally */
+}
+
+.right-slider .proBox figure {
+    transform: scaleX(-1); /* Flip the content inside the right slider back to normal */
+}
+
+/* Shared box4 styling */
+.box4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.main_box {
+    width: 5px;
+    height: 5px;
+    position: relative;
+    transition: all 0.5s ease-out;
+}
+
+.main_box * {
+    transition: all 0.5s ease-out;
+}
+
+.proBox {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.proBox figure {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%);
+}
+
+.proBox:nth-child(1) {
+    transform: translate(100%, -50%) rotate(0deg);
+}
+
+.proBox:nth-child(2) {
+    transform: translate(55%, -155%) rotate(-45deg);
+}
+
+.proBox:nth-child(3) {
+    transform: translate(-50%, -200%) rotate(-90deg);
+}
+
+.proBox:nth-child(4) {
+    transform: translate(-155%, -155%) rotate(-135deg);
+}
+
+.proBox:nth-child(5) {
+    transform: translate(-200%, -50%) rotate(-180deg);
+}
+
+.proBox:nth-child(6) {
+    transform: translate(-155%, 55%) rotate(-225deg);
+}
+
+.proBox:nth-child(7) {
+    transform: translate(-50%, 100%) rotate(-270deg);
+}
+
+.proBox:nth-child(8) {
+    transform: translate(55%, 55%) rotate(-315deg);
+}
+
+/* #page2 H1{
+    color: #000;
+    font-size: xx-large;
+} */
+
+.child {
+    height: 54vh;
+    width: 38vw;
+    /* background-color: red; */
+    /* border: 2px solid #000; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child img {
+    height: 100%;
+}
+
+.footer {
+    background-color: #97572b;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Ensures footer sticks to the bottom */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-left h2 {
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-left p {
+    font-size: 0.875rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #007bff;
+}
+
+@media (max-width:600px) {
+
+    #nav {
+        /* height: 100px; */
+        width: 100%;
+        /* background-color: burlywood; */
+        position: fixed;
+        z-index: 99;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    #nav #nav-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    #links {
+        padding: 10px;
+        display: none;
+    }
+
+    #nav-part1 {
+        /* background-color: RED; */
+        height: 67px;
+        overflow: hidden;
+    }
+
+    #nav-part1 svg {
+        display: block;
+        height: 67px;
+        width: 80px;
+    }
+    #nav #twogoodlogo{
+        height: 40px;
+        margin-left: -20px;
+    }
+
+    #icons {
+        padding: 7px;
+        border-radius: 50px;
+        background-color: #F7F7F7;
+    }
+
+    #nav-part2 #icons i {
+        font-size: 15px;
+        margin: 0 20px;
+        font-weight: 100;
+    }
+
+    #page1 {
+        /* background-color: red; */
+        min-height: 70vh;
+        width: 100%;
+        padding: 0 3vw;
+        padding-top: 25vh;
+
+    }
+
+    #page1 h1 {
+        font-size: 15.5vw;
+        letter-spacing: -3px;
+    }
+
+    #video-container {
+        height: 25vh;
+        margin-top: 3vw;
+    }
+
+    #video-container #play {
+        padding: 9.5vw 7.2vw;
+        font-size: 4.5vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        scale: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    #page2 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 5vw 3vw;
+        flex-direction: column;
+        justify-content: space-between;
+        /* background-color: red; */
+    }
+
+    #page2 .elem {
+        height: 100vh;
+        width: 100%;
+        /* background-color: red; */
+        overflow: hidden;
+        margin-bottom: 3vw;
+    }
+
+    #page2 .elem .dets {
+        height: 40px;
+        border-radius: 50px;
+        width: 70%;
+        position: absolute;
+        z-index: 9;
+        background-color: rgb(229, 156, 186);
+
+    }
+
+    #page3 {
+        min-height: 120vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .child {
+        height: 54vh;
+        width: 88vw;
+        /* background-color: red; */
+        /* border: 2px solid #000; */
+        position: relative;
+        padding: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .child img {
+        height: 100%;
+    }
+
+    
+
+}
